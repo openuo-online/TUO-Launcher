@@ -13,6 +13,9 @@ on:
         required: true
         default: "main"
 
+permissions:
+  contents: write
+
 concurrency:
   group: maindeploy
   cancel-in-progress: true
