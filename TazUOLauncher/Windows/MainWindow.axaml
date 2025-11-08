@@ -13,7 +13,7 @@
             </Image.OpacityMask>
         </Image>
 
-        <Menu>
+        <!-- <Menu>
             <MenuItem Classes="Small">
                 <MenuItem.Header>
                     <Image Source="resm:TazUOLauncher.Resources.bars.png?assembly=TazUOLauncher" Width="20" Height="20" Stretch="Fill" Opacity="0.55" />
@@ -59,7 +59,7 @@
                 <Separator/>
                 <MenuItem Header="Edit Profiles" Click="EditProfilesClicked"/>
             </MenuItem>
-        </Menu>
+        </Menu> -->
 
         <Grid Width="{Binding $parent.Bounds.Width}" IsVisible="{Binding DangerNoticeStringShowing}" Grid.ColumnDefinitions="*, Auto, *" Margin="0, 5, 0, 0">
             <Label Classes="Warning" HorizontalContentAlignment="Center" Padding="4, 4, 4, 4" Grid.Column="1" Content="{Binding DangerNoticeString}" Background="#D8202020"/>
