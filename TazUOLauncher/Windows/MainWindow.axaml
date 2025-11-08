@@ -77,10 +77,10 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <ComboBox x:Name="ProfileSelector" PlaceholderText="Select a profile" Name="ProfileSelector" Canvas.Left="300" Canvas.Top="255" MaxWidth="200" Width="200" ItemsSource="{Binding Profiles}" SelectionChanged="ProfileSelectionChanged"/>
+        <ComboBox x:Name="ProfileSelector" PlaceholderText="选择一个连接信息" Name="ProfileSelector" Canvas.Left="300" Canvas.Top="255" MaxWidth="200" Width="200" ItemsSource="{Binding Profiles}" SelectionChanged="ProfileSelectionChanged"/>
 
         <Button Name="PlayButton" x:Name="PlayButton" IsEnabled="{Binding PlayButtonEnabled}" Margin="0, 1, 0, 0" Width="200" Canvas.Left="300" Canvas.Top="{Binding #ProfileSelector.Bounds.Bottom}" Click="PlayButtonClicked" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                Play
+                开始游戏
         </Button>
 
         <Panel Canvas.Top="{Binding #PlayButton.Bounds.Bottom}" Width="{Binding $parent.Bounds.Width}">
@@ -88,12 +88,12 @@
                 <TextBlock HorizontalAlignment="Center" TextAlignment="Center">
                     <Label Content="{Binding UpdateButtonString}"/>
                     <LineBreak/>
-                        Download now</TextBlock>
+                        现在下载</TextBlock>
             </Button>
         </Panel>
 
         <ProgressBar Margin="0, 1, 0, 0" IsVisible="{Binding ShowDownloadProgressBar}" x:Name="DownloadProgressBar" Name="DownloadProgressBar" Width="400" Height="{Binding #DownloadProgressLabel.Bounds.Height}" Canvas.Left="200" Canvas.Top="{Binding #PlayButton.Bounds.Bottom}" Maximum="100" Value="{Binding DownloadProgressBarPercent}"/>
-        <Label Margin="0, 1, 0, 0" IsVisible="{Binding #DownloadProgressBar.IsVisible}" Name="DownloadProgressLabel" Canvas.Left="330" Canvas.Top="{Binding #PlayButton.Bounds.Bottom}">Downloading an update..</Label>
+        <Label Margin="0, 1, 0, 0" IsVisible="{Binding #DownloadProgressBar.IsVisible}" Name="DownloadProgressLabel" Canvas.Left="330" Canvas.Top="{Binding #PlayButton.Bounds.Bottom}">正在更新..</Label>
 
         <Grid Width="{Binding $parent.Bounds.Width}" Canvas.Bottom="0">
             <Grid.ColumnDefinitions>

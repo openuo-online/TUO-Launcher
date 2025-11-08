@@ -333,8 +333,8 @@ public class MainWindowViewModel : INotifyPropertyChanged
     private int downloadProgressBarPercent;
     private bool showDownloadAvailableButton;
     private string remoteVersionString = string.Format(CONSTANTS.REMOTE_VERSION_FORMAT, "Checking...");
-    private string localVersionString = "Local Version: Checking...";
-    private string localLauncherVersionString = $"Launcher Version: {LauncherVersion.GetLauncherVersion().ToHumanReable()}";
+    private string localVersionString = "本地版本检测中...";
+    private string localLauncherVersionString = $"启动器版本: {LauncherVersion.GetLauncherVersion().ToHumanReable()}";
     private string dangerNoticeString = string.Empty;
     private bool playButtonEnabled;
     private string updateButtonString = string.Empty;

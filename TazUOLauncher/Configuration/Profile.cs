@@ -9,7 +9,7 @@ class Profile
 {
     private Settings? _CUOSettings;
     public bool IsDeleted = false;
-    private string name = ProfileManager.EnsureUniqueName("Blank Profile");
+    private string name = ProfileManager.EnsureUniqueName("空白信息");
 
     public string Name { get => name; set { name = value; } }
     public string SettingsFile { get; set; } = Guid.NewGuid().ToString();

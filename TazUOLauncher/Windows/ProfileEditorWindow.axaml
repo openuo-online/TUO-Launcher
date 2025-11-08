@@ -19,9 +19,9 @@
 
         <Grid RowDefinitions="Auto, *" Width="250" Height="{Binding $parent.Bounds.Height}" Canvas.Left="10">
             <Grid Grid.Row="0" Margin="0, 10, 0, 0" ColumnDefinitions="*, *, *">
-                <Button Grid.Column="0" Click="NewProfileClicked">New</Button>
-                <Button Grid.Column="1" IsEnabled="{Binding EditAreaEnabled}" Click="DeleteProfileClicked">Delete</Button>
-                <Button Grid.Column="2" IsEnabled="{Binding EditAreaEnabled}" Click="CopyProfileClicked">Copy</Button>
+                <Button Grid.Column="0" Click="NewProfileClicked">新建</Button>
+                <Button Grid.Column="1" IsEnabled="{Binding EditAreaEnabled}" Click="DeleteProfileClicked">删除</Button>
+                <Button Grid.Column="2" IsEnabled="{Binding EditAreaEnabled}" Click="CopyProfileClicked">复制</Button>
             </Grid>
 
             <ListBox Grid.Row="1"
@@ -32,69 +32,69 @@
 
         <Canvas Width="510" Height="{Binding $parent.Bounds.Height}" Canvas.Right="5" IsEnabled="{Binding EditAreaEnabled}">
             <TabControl Width="500" Height="{Binding $parent.Bounds.Height}">
-                <TabItem Header="General">
+                <TabItem Header="一般设置">
                     <Grid RowDefinitions="*,*,*,*,*,*,*" ColumnDefinitions="*,*,*,*">
 
-                        <Label Grid.Row="0" VerticalAlignment="Center">Profile Name</Label>
-                        <TextBox x:Name="EntryProfileName" ToolTip.Tip="This profile's name" Watermark="Profile name" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Margin="2,2,2,2" VerticalContentAlignment="Center" Padding="5"/>
+                        <Label Grid.Row="0" VerticalAlignment="Center">连接信息名称</Label>
+                        <TextBox x:Name="EntryProfileName" ToolTip.Tip="This profile's name" Watermark="连接信息名称" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Margin="2,2,2,2" VerticalContentAlignment="Center" Padding="5"/>
 
-                        <Label Grid.Row="1" VerticalAlignment="Center">Account</Label>
-                        <TextBox x:Name="EntryAccountName" ToolTip.Tip="Account name" Watermark="Account name" Grid.Row="1" Grid.Column="1" Margin="2,2,2,2" Padding="5" VerticalContentAlignment="Center"></TextBox>
-                        <TextBox x:Name="EntryAccountPass" ToolTip.Tip="Password" Watermark="Password" Grid.Row="1" Grid.Column="2" Margin="2,2,2,2" Padding="5" VerticalContentAlignment="Center" PasswordChar="*"/>
+                        <Label Grid.Row="1" VerticalAlignment="Center">账号</Label>
+                        <TextBox x:Name="EntryAccountName" ToolTip.Tip="Account name" Watermark="账号" Grid.Row="1" Grid.Column="1" Margin="2,2,2,2" Padding="5" VerticalContentAlignment="Center"></TextBox>
+                        <TextBox x:Name="EntryAccountPass" ToolTip.Tip="Password" Watermark="密码" Grid.Row="1" Grid.Column="2" Margin="2,2,2,2" Padding="5" VerticalContentAlignment="Center" PasswordChar="*"/>
 
                         <CheckBox x:Name="EntrySavePass" VerticalAlignment="Center" Grid.Row="1" Grid.Column="3" Foreground="White">
-                            Save Account
+                            保存账号信息
                         </CheckBox>
                         
-                        <Label Grid.Row="2" VerticalAlignment="Center">Server Presets</Label>
+                        <Label Grid.Row="2" VerticalAlignment="Center">服务器预设</Label>
                         <ComboBox x:Name="EntryServerPresets" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Margin="2,2,2,2" Padding="5" VerticalContentAlignment="Center" VerticalAlignment="Center" ItemsSource="{Binding ServerPresets}" SelectionChanged="ServerPresetSelectionChanged"></ComboBox>
 
-                        <Label Grid.Row="3" VerticalAlignment="Center">Connection</Label>
+                        <Label Grid.Row="3" VerticalAlignment="Center">服务器地址</Label>
                         <TextBox x:Name="EntryServerIP" ToolTip.Tip="Server address, for example: 192.168.1.1" Watermark="127.0.0.1" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="2,2,2,2" Padding="5" VerticalContentAlignment="Center"></TextBox>
                         <TextBox x:Name="EntryServerPort" ToolTip.Tip="Server port, usually 2593 or 5003" Watermark="2593" Grid.Row="3" Grid.Column="3" Margin="2,2,2,2" Padding="5" VerticalContentAlignment="Center"></TextBox>
 
-                        <Label Grid.Row="5" VerticalAlignment="Center">UO Directory</Label>
+                        <Label Grid.Row="5" VerticalAlignment="Center">UO根目录</Label>
                         <TextBox x:Name="EntryUODirectory" ToolTip.Tip="Where your servers client files are at. Usually where client.exe exists." Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="2,2,2,2" Padding="5" VerticalContentAlignment="Center"></TextBox>
-                        <Button Click="LocateUOFolderClicked" x:Name="LocateUOButton" Grid.Row="5" Grid.Column="3">Locate</Button>
+                        <Button Click="LocateUOFolderClicked" x:Name="LocateUOButton" Grid.Row="5" Grid.Column="3">选择</Button>
 
-                        <Label Grid.Row="6" VerticalAlignment="Center">Client Version</Label>
+                        <Label Grid.Row="6" VerticalAlignment="Center">客户端版本</Label>
                         <TextBox x:Name="EntryClientVersion" ToolTip.Tip="The client version your server uses. Something similar to 7.0.99.1" Grid.Row="6" Grid.Column="1" Margin="2,2,2,2" Padding="5" VerticalContentAlignment="Center"></TextBox>
                         <CheckBox x:Name="EntryEncrypedClient" ToolTip.Tip="Some servers use encryption, some do not. Playing official servers? Tick this" VerticalAlignment="Center" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3">
-                            Use Encryption
+                            开启加密
                         </CheckBox>
 
                     </Grid>
                 </TabItem>
 
-                <TabItem Header="Plugins">
+                <TabItem Header="插件">
                     <Grid RowDefinitions="Auto, *" ColumnDefinitions="*, *" Margin="0, 5, 0, 5">
-                        <Button Click="AddPluginClicked" Margin="5, 5, 5, 5">Add</Button>
-                        <Button Click="PluginRemoveClicked" Margin="5, 5, 5, 5" Grid.Column="1">Remove</Button>
+                        <Button Click="AddPluginClicked" Margin="5, 5, 5, 5">添加</Button>
+                        <Button Click="PluginRemoveClicked" Margin="5, 5, 5, 5" Grid.Column="1">删除</Button>
 
                         <ListBox x:Name="EntryPluginList" ItemsSource="{Binding Plugins}" Grid.Row="1" Grid.ColumnSpan="2"/>
                     </Grid>
                 </TabItem>
 
-                <TabItem Header="Advanced">
+                <TabItem Header="高级选项">
                     <Grid RowDefinitions="*,*,*,*,*" ColumnDefinitions="*, *, *, *" Margin="0, 5, 0, 5">
-                        <CheckBox x:Name="EntryAutoLogin" VerticalAlignment="Center" ToolTip.Tip="Automatically log into your character" Grid.ColumnSpan="2">Auto Login</CheckBox>
+                        <CheckBox x:Name="EntryAutoLogin" VerticalAlignment="Center" ToolTip.Tip="Automatically log into your character" Grid.ColumnSpan="2">自动登录</CheckBox>
 
-                        <CheckBox x:Name="EntryReconnect" VerticalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2">Auto Reconnect</CheckBox>
+                        <CheckBox x:Name="EntryReconnect" VerticalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2">自动重连</CheckBox>
                         
                         <NumericUpDown x:Name="EntryReconnectTime" ToolTip.Tip="Time to reconnect in milliseconds." Grid.Row="1" Grid.Column="2" Increment="50"/>
 
-                        <CheckBox x:Name="EntryLoginMusic" Grid.Row="2" VerticalAlignment="Center">Music</CheckBox>
+                        <CheckBox x:Name="EntryLoginMusic" Grid.Row="2" VerticalAlignment="Center">音乐</CheckBox>
                         <Slider x:Name="EntryMusicVolume" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center" Minimum="0" Maximum="100"/>
 
-                        <Label Grid.Row="3" VerticalAlignment="Center">Auto login to char</Label>
+                        <Label Grid.Row="3" VerticalAlignment="Center">自动登录角色</Label>
                         <TextBox ToolTip.Tip="Character name to auto log in to." x:Name="EntryLastCharName" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Margin="2,2,2,2" Padding="5" VerticalContentAlignment="Center"></TextBox>
 
-                        <Label Grid.Row="4" VerticalAlignment="Center">Additional Args</Label>
+                        <Label Grid.Row="4" VerticalAlignment="Center">额外参数</Label>
                         <TextBox x:Name="EntryAdditionalArgs" ToolTip.Tip="Addition args to send to TUO, ex: '-fps 120 -packetlog'" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Margin="2,2,2,2" Padding="5" VerticalContentAlignment="Center"></TextBox>
                     </Grid>
                 </TabItem>
             </TabControl>
         </Canvas>
-        <Button Classes="Success" Click="SaveButtonClicked" Canvas.Right="5" Canvas.Bottom="5" IsVisible="{Binding EditAreaEnabled}">Save</Button>
+        <Button Classes="Success" Click="SaveButtonClicked" Canvas.Right="5" Canvas.Bottom="5" IsVisible="{Binding EditAreaEnabled}">保存</Button>
     </Canvas>
 </Window>
