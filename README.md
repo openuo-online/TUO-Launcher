@@ -11,3 +11,6 @@ A launcher for OpenUO
 
 <img width="912" height="590" alt="image" src="https://github.com/user-attachments/assets/47789b08-8b83-456b-b607-9979bcdad0a3" />
 
+#### 感谢
+- https://github.com/PlayTazUO/TUO-Launcher
+- https://github.com/PlayTazUO/TazUO
