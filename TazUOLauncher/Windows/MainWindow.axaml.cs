@@ -91,7 +91,7 @@ public partial class MainWindow : Window
         var data = UpdateHelper.ReleaseData[ReleaseChannel.LAUNCHER];
         if (data.GetVersion() > LauncherVersion.GetLauncherVersion())
         {
-            viewModel.DangerNoticeString = $"A launcher update is available! ({LauncherVersion.GetLauncherVersion().ToHumanReable()} -> {data.GetVersion().ToHumanReable()})";
+            viewModel.DangerNoticeString = $"启动器有新的版本可以更新! ({LauncherVersion.GetLauncherVersion().ToHumanReable()} -> {data.GetVersion().ToHumanReable()})";
             viewModel.ShowLauncherUpdateButton = true;
         }
     }
