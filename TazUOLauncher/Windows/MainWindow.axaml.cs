@@ -150,7 +150,7 @@ public partial class MainWindow : Window
 
         if (clientStatus <= ClientStatus.DOWNLOAD_IN_PROGRESS) return false;
 
-        if (Process.GetProcessesByName("TazUO").Length > 0) return false;
+        if (Process.GetProcessesByName("OpenUO").Length > 0) return false;
         
         if (nextDownloadType > ReleaseChannel.INVALID && LauncherSettings.GetLauncherSaveFile.AutoDownloadUpdates)
         {

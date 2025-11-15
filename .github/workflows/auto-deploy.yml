@@ -23,8 +23,8 @@ concurrency:
 env:
   OUTPUT_PATH: "../../bin/dist"
   PROJ: "TazUOLauncher/TazUOLauncher.csproj"
-  ZIP_NAME: "TazUO-Launcher"
-  TAG_NAME: "TazUO-Launcher"
+  ZIP_NAME: "OpenUO-Launcher"
+  TAG_NAME: "OpenUO-Launcher"
 
   DOTNET_NOLOGO: false
   DOTNET_CLI_TELEMETRY_OPTOUT: 1

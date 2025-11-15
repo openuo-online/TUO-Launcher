@@ -99,7 +99,7 @@ internal static class UpdateHelper
     {
         if (!HaveData(channel)) return;
 
-        if (Process.GetProcessesByName("TazUO").Length > 0)
+        if (Process.GetProcessesByName("OpenUO").Length > 0)
         {
             onCompleted();
             return;
